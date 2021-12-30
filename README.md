@@ -21,6 +21,14 @@ Para transformar uma classe em um Provider, basta adicionar o decorator @Injecta
 Mapeamento objeto relacional, ou seja, algo que traduza o nosso modelo de livros em uma tabela no nosso banco de dados.
 Para isso vamos usar o Sequelize.
 
+### Validação de dados
+
+Para a validação dos dados, utilizei as bibliotecas class-transformer e class-validator, nas versões "0.5.1" e "0.13.2" respectivamente.
+
+Respositório do [class-transformer](https://github.com/typestack/class-transformer)
+
+Respositório do [class-validator](https://github.com/typestack/class-validator)
+
 ## Installation
 
 ```bash

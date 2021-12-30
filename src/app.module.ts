@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { Book } from './book.model';
-import { BooksController } from './books.controller';
-import { BooksService } from './books.service';
+import { Book } from './books/book.model';
+import { BooksController } from './books/books.controller';
+import { BooksService } from './books/books.service';
 import { ConfigModule } from '@nestjs/config';
+import { UserModule } from './users/user.module';
 
 @Module({
   imports: [
+    UserModule,
     ConfigModule.forRoot({
       envFilePath: '.development.env',
     }),
@@ -23,7 +23,7 @@ import { ConfigModule } from '@nestjs/config';
     }),
     SequelizeModule.forFeature([Book])
   ],
-  controllers: [AppController, BooksController],
-  providers: [AppService, BooksService],
+  controllers: [BooksController],
+  providers: [BooksService],
 })
 export class AppModule {}
