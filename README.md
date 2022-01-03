@@ -28,6 +28,10 @@ Para a validação dos dados, utilizei as bibliotecas class-transformer e class-
 Respositório do [class-transformer](https://github.com/typestack/class-transformer)
 
 Respositório do [class-validator](https://github.com/typestack/class-validator)
+Mais detalhes dos decorators que podemos utilizar:
+https://github.com/typestack/class-validator#validation-decorators
+
+Iremos utilizar os [Pipes](https://docs.nestjs.com/pipes) do NestJS para que possamos validar os dados antes de chegar no controller. Pipes são utilizados para transformações e validações de dados.
 
 ## Installation
 
