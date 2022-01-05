@@ -1,4 +1,4 @@
-## Description
+## Descrição
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
@@ -33,13 +33,19 @@ https://github.com/typestack/class-validator#validation-decorators
 
 Iremos utilizar os [Pipes](https://docs.nestjs.com/pipes) do NestJS para que possamos validar os dados antes de chegar no controller. Pipes são utilizados para transformações e validações de dados.
 
-## Installation
+### Interceptors
+
+São utilizados para interceptar as requisições tanto na entrada quando na saída.
+Nesse projeto, utilizamos um interceptador utilizado pela 'class-tranformer' e criamos um interceptador que informa o tempo da requisição.
+Documentação dos [Interceptor](https://docs.nestjs.com/interceptors)
+
+## Instalação
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+## Executando
 
 ```bash
 # development
@@ -52,29 +58,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Contato
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- Aluno - [Daniel Vieira](https://github.com/daniellvieira)
+- NestJS - [https://nestjs.com](https://nestjs.com/)

@@ -6,6 +6,7 @@ import { BooksService } from './books/books.service';
 import { ConfigModule } from '@nestjs/config';
 import { UserModule } from './users/user.module';
 import { APP_INTERCEPTOR } from '@nestjs/core';
+import { LoggingInterceptor } from './logging.interceptor';
 
 @Module({
   imports: [
