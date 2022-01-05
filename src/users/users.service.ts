@@ -9,8 +9,8 @@ export class UsersService {
       username: 'danielvieira',
       email: 'daniel@gmail.com',
       password: '123456',
-      full_name: 'Daniel Vieira',
-      dateEntry: new Date(),
+      fullName: 'Daniel Vieira',
+      joinDate: new Date(),
     },
   ];
 

@@ -1,7 +1,9 @@
-import { Body, Controller, Get, Param, Post } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post, UseInterceptors } from "@nestjs/common";
+import { LoggingInterceptor } from "src/logging.interceptor";
 import { User } from "./user.entity";
 import { UsersService } from "./users.service";
 
+@UseInterceptors(LoggingInterceptor)
 @Controller('users')
 export class UsersController {
 

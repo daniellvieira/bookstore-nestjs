@@ -1,10 +1,11 @@
-import { Module } from '@nestjs/common';
+import { ClassSerializerInterceptor, Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { Book } from './books/book.model';
 import { BooksController } from './books/books.controller';
 import { BooksService } from './books/books.service';
 import { ConfigModule } from '@nestjs/config';
 import { UserModule } from './users/user.module';
+import { APP_INTERCEPTOR } from '@nestjs/core';
 
 @Module({
   imports: [
@@ -24,6 +25,12 @@ import { UserModule } from './users/user.module';
     SequelizeModule.forFeature([Book])
   ],
   controllers: [BooksController],
-  providers: [BooksService],
+  providers: [
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: ClassSerializerInterceptor,
+    },
+    BooksService,
+  ],
 })
 export class AppModule {}
