@@ -5,8 +5,9 @@ import { BooksController } from './books/books.controller';
 import { BooksService } from './books/books.service';
 import { ConfigModule } from '@nestjs/config';
 import { UserModule } from './users/user.module';
-import { APP_INTERCEPTOR } from '@nestjs/core';
+import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { LoggingInterceptor } from './logging.interceptor';
+import { ExceptionFilterHttp } from './common/filters/exception-filter-http.filter';
 
 @Module({
   imports: [
@@ -30,6 +31,10 @@ import { LoggingInterceptor } from './logging.interceptor';
     {
       provide: APP_INTERCEPTOR,
       useClass: ClassSerializerInterceptor,
+    },
+    {
+      provide: APP_FILTER,
+      useClass: ExceptionFilterHttp,
     },
     BooksService,
   ],
