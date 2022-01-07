@@ -15,6 +15,7 @@ export class ExceptionFilterHttp implements ExceptionFilter {
   constructor(adapterHost: HttpAdapterHost) {
     this.httpAdapter = adapterHost.httpAdapter;
   }
+
   catch(exception: Error, host: ArgumentsHost) {
     const context = host.switchToHttp();
     const request = context.getRequest();

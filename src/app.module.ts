@@ -8,6 +8,7 @@ import { UserModule } from './users/user.module';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { LoggingInterceptor } from './logging.interceptor';
 import { ExceptionFilterHttp } from './common/filters/exception-filter-http.filter';
+import { TransformResponseInterceptor } from './core/http/tranform-response.interceptor';
 
 @Module({
   imports: [
@@ -35,6 +36,10 @@ import { ExceptionFilterHttp } from './common/filters/exception-filter-http.filt
     {
       provide: APP_FILTER,
       useClass: ExceptionFilterHttp,
+    },
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: TransformResponseInterceptor
     },
     BooksService,
   ],
