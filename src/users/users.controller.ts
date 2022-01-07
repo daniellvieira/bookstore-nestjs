@@ -3,6 +3,7 @@ import {
   Controller,
   Get,
   HttpStatus,
+  NotFoundException,
   Param,
   Post
 } from "@nestjs/common";
@@ -20,6 +21,12 @@ export class UsersController {
   public findByUsername(@Param('username') username: string) {
     const userFound = this.usersService.findByUsername(username);
 
+    if (!userFound) {
+      throw new NotFoundException({
+        statusCode: HttpStatus.NOT_FOUND,
+        message: 'Usuário não encontrado.'
+      });
+    };
     return userFound;
   }
 
